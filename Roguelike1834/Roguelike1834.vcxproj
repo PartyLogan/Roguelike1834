@@ -127,11 +127,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Roguelike1834.cpp" />
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="RaylibRenderer.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Roguelike1834.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\Anikki_square_16x16.png" />
     <Image Include="assets\monochrome-transparent_packed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="RaylibRenderer.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
