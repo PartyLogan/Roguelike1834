@@ -12,10 +12,10 @@ public:
 	// Renderer for the game
 	std::shared_ptr<Renderer> renderer;
 	// Game width in tiles
-	int width;
-	int height;
+	int width = 80;
+	int height = 50;
 	// Tile size for the game
-	int tileSize;
+	int tileSize = 16;
 	// Tilemap for the game
 	Texture tileMap;
 	// Actors
