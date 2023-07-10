@@ -60,7 +60,7 @@ Vector2 Tile::GetMapTile(MapTile tile) {
 	}
 }
 
-Tile Tile::MakeForestWall()
+std::shared_ptr<Tile> Tile::MakeForestWall()
 {
 	int rng = GetRandomValue(0, 4);
 	Tile::MapTile type = MapTile::Wall;
@@ -83,10 +83,10 @@ Tile Tile::MakeForestWall()
 		break;
 	}
 
-	return Tile("Forest Wall", true, true, type, LIME, DARKBROWN);
+	return std::make_shared<Tile>("Forest Wall", true, true, type, WHITE, BLACK); // TODO: Change back to LIME, DARKBROWN or DARKGREEN, DARKBROWN
 }
 
-Tile Tile::MakeForestFloor()
+std::shared_ptr<Tile> Tile::MakeForestFloor()
 {
 	int rng = GetRandomValue(0, 5);
 	Tile::MapTile type = MapTile::Floor;
@@ -111,5 +111,5 @@ Tile Tile::MakeForestFloor()
 		type = MapTile::Blank;
 		break;
 	}
-	return Tile("Forest Floor", false, false, type, GREEN, DARKBROWN);
+	return std::make_shared<Tile>("Forest Floor", false, false, type, GREEN, DARKBROWN);
 }

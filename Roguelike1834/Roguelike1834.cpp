@@ -12,13 +12,19 @@ int main()
     const int screenWidth = 1280;
     const int screenHeight = 720;
     const int tileSize = 16;
-
+    
     InitWindow(screenWidth, screenHeight, "Roguelike");
     //SetTargetFPS(60);
 
+    // Load texture and setup renderer
     auto texture = LoadTexture("assets/monochrome-transparent_packed.png");
     std::shared_ptr<RaylibRenderer> renderer = std::make_shared<RaylibRenderer>();
+
+    // Setup gamestate
     std::shared_ptr<GameState> gamestate = std::make_shared<GameState>(renderer, screenWidth / tileSize, screenHeight / tileSize, tileSize, texture);
+
+    // Create map
+    gamestate.get()->map.get()->GenerateMap();
 
     while (!WindowShouldClose())
     {

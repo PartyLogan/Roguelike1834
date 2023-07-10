@@ -25,9 +25,12 @@ public:
 	Actor player;
 	// Map
 	std::shared_ptr<Map> map;
+	// Seed
+	int currentSeed = 0;
 
 	GameState(std::shared_ptr<Renderer> renderer, int width, int height, int tileSize, Texture tileMap);
-
+	
+	void SetCurrentSeed(int seed);
 	void DrawMap();
 };
 

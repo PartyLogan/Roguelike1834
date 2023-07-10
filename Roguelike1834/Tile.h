@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
 #include <string>
+#include <memory>
 
 class Tile
 {
@@ -37,8 +38,8 @@ public:
 
 	static Vector2 GetActorTile(ActorTile tile);
 	static Vector2 GetMapTile(MapTile tile);
-	static Tile MakeForestWall();
-	static Tile MakeForestFloor();
+	static std::shared_ptr<Tile> MakeForestWall();
+	static std::shared_ptr<Tile> MakeForestFloor();
 
 	Tile() = default;
 };

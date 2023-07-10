@@ -15,17 +15,17 @@ void RaylibRenderer::DrawMap(int x, int y, int tileSize, Texture tileMap ,std::s
 
 	for (int i = 0; i < map.get()->width; i++) {
 		for (int j = 0; j < map.get()->height; j++) {
-			Tile tile = map.get()->tiles[i][j];
+			std::shared_ptr<Tile> tile = map.get()->tiles[i][j];
 			// Position of the tile in the tile map
-			Vector2 tilePos = Tile::GetMapTile(tile.mapTile);
+			Vector2 tilePos = Tile::GetMapTile(tile.get()->mapTile);
 			// Rectangle of the image to draw
 			Rectangle source = { tilePos.x * tileSize, tilePos.y * tileSize, tileSize, tileSize };
 			// Position on the map to draw
 			Vector2 pos = { x + i * tileSize, y + j * tileSize };
 			// Draw the BG
-			DrawTextureRec(tileMap, bgSource, pos, tile.bg);
+			DrawTextureRec(tileMap, bgSource, pos, tile.get()->bg);
 			// Draw the FG
-			DrawTextureRec(tileMap, source, pos, tile.fg);
+			DrawTextureRec(tileMap, source, pos, tile.get()->fg);
 		}
 	}
 }
