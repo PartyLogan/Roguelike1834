@@ -156,6 +156,7 @@
     <ClInclude Include="src\game\RaylibRenderer.h" />
     <ClInclude Include="src\game\Renderer.h" />
     <ClInclude Include="src\maps\Tile.h" />
+    <ClInclude Include="src\ParadisePalette.h" />
     <ClInclude Include="src\Util.h" />
     <ClInclude Include="src\actions\WalkAction.h" />
   </ItemGroup>

@@ -97,5 +97,8 @@
     <ClInclude Include="src\actions\BumpAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\ParadisePalette.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

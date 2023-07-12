@@ -1,4 +1,5 @@
 #include "Tile.h"
+#include "../ParadisePalette.h"
 
 Tile::Tile(std::string name, bool blocksVision, bool blocksMovement, Tile::MapTile mapTile, Color fg, Color bg)
 {
@@ -83,7 +84,7 @@ std::shared_ptr<Tile> Tile::MakeForestWall()
 		break;
 	}
 
-	return std::make_shared<Tile>("Forest Wall", true, true, type, WHITE, BLACK); // TODO: Change back to LIME, DARKBROWN or DARKGREEN, DARKBROWN
+	return std::make_shared<Tile>("Forest Wall", true, true, type, P_GREEN, P_DARKBROWN); // TODO: Change back to LIME, DARKBROWN or DARKGREEN, DARKBROWN
 }
 
 std::shared_ptr<Tile> Tile::MakeForestFloor()
@@ -111,5 +112,5 @@ std::shared_ptr<Tile> Tile::MakeForestFloor()
 		type = MapTile::Blank;
 		break;
 	}
-	return std::make_shared<Tile>("Forest Floor", false, false, type, GREEN, DARKBROWN);
+	return std::make_shared<Tile>("Forest Floor", false, false, type, P_DARKGREEN, P_DARKBROWN);
 }

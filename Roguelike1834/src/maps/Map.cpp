@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../Util.h"
 
+
 Map::Map(int width, int height)
 {
 	this->width = width;
