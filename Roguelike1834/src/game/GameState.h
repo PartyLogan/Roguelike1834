@@ -39,6 +39,8 @@ public:
 	void Update();
 	void AddActor(std::shared_ptr<Actor> actor);
 	void SetPlayer(std::shared_ptr<Actor> actor);
+	void UpdateFOVs();
+	void SetFOVSizes(int width, int height);
 private:
 	void ProcessTurn();
 	void NextActor();

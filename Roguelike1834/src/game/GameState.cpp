@@ -21,12 +21,12 @@ GameState::GameState(std::shared_ptr<Renderer> renderer, int width, int height, 
 
 void GameState::DrawMap()
 {
-	renderer.get()->DrawMap(0, 0, tileSize, tileMap, map);
+	renderer.get()->DrawMap(0, 0, tileSize, tileMap, map, player);
 }
 
 void GameState::DrawActors()
 {
-	renderer.get()->DrawActors(0, 0, tileSize, tileMap, actors);
+	renderer.get()->DrawActors(0, 0, tileSize, tileMap, actors, player);
 }
 
 
@@ -44,6 +44,20 @@ void GameState::SetPlayer(std::shared_ptr<Actor> actor)
 {
 	player = actor;
 	AddActor(actor);
+}
+
+void GameState::UpdateFOVs()
+{
+	for (int i = 0; i < actors.size(); i++) {
+		actors[i].get()->fov.get()->UpdateFOV(actors[i].get()->x, actors[i].get()->y, map);
+	}
+}
+
+void GameState::SetFOVSizes(int width, int height)
+{
+	for (int i = 0; i < actors.size(); i++) {
+		actors[i].get()->fov.get()->Resize(width, height);
+	}
 }
 
 void GameState::ProcessTurn()
@@ -92,6 +106,10 @@ void GameState::ProcessTurn()
 		action = result.alternative;
 	}
 	delete action;
+
+	// Update FOV
+	UpdateFOVs();
+
 	if (completedTurn) {
 		NextActor();
 	}
@@ -102,6 +120,9 @@ void GameState::NextActor()
 	std::cout << "Next actor: " << actors[currentActorIndex].get()->name << std::endl;
 	completedTurn = false;
 	currentActorIndex++;
+
+
+
 	if (currentActorIndex >= actors.size()) {
 		currentActorIndex = 0;
 		currentTurn++;

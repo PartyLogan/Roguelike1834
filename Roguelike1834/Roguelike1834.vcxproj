@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\entities\FOV.cpp" />
     <ClCompile Include="src\actions\BumpAction.cpp" />
     <ClCompile Include="src\actions\Action.cpp" />
     <ClCompile Include="src\actions\ActionResult.cpp" />
@@ -146,6 +147,7 @@
     <Image Include="assets\monochrome-transparent_packed.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\entities\FOV.h" />
     <ClInclude Include="src\actions\BumpAction.h" />
     <ClInclude Include="src\actions\Action.h" />
     <ClInclude Include="src\actions\ActionResult.h" />
@@ -156,7 +158,7 @@
     <ClInclude Include="src\game\RaylibRenderer.h" />
     <ClInclude Include="src\game\Renderer.h" />
     <ClInclude Include="src\maps\Tile.h" />
-    <ClInclude Include="src\ParadisePalette.h" />
+    <ClInclude Include="src\Palette.h" />
     <ClInclude Include="src\Util.h" />
     <ClInclude Include="src\actions\WalkAction.h" />
   </ItemGroup>

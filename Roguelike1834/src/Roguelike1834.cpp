@@ -7,7 +7,7 @@
 #include "game/RaylibRenderer.h"
 #include "entities/Actor.h"
 #include "maps/Tile.h"
-#include "ParadisePalette.h"
+#include "Palette.h"
 
 int main()
 {
@@ -29,9 +29,12 @@ int main()
     Vector2 playerStart = gamestate.get()->map.get()->GenerateMap();
 
     // Make player
-    std::shared_ptr<Actor> player = std::make_shared<Actor>(playerStart.x, playerStart.y, P_YELLOW, P_BLACK, "Player", Tile::ActorTile::Player);
+    std::shared_ptr<Actor> player = std::make_shared<Actor>(playerStart.x, playerStart.y, P_PLAYER, P_BLACK, "Player", Tile::ActorTile::Player);
 
     gamestate.get()->SetPlayer(player);
+
+    gamestate.get()->SetFOVSizes(gamestate.get()->width, gamestate.get()->height);
+    gamestate.get()->UpdateFOVs();
 
     while (!WindowShouldClose())
     {

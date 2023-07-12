@@ -51,6 +51,9 @@
     <ClCompile Include="src\actions\BumpAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\FOV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\Anikki_square_16x16.png">
@@ -97,7 +100,10 @@
     <ClInclude Include="src\actions\BumpAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ParadisePalette.h">
+    <ClInclude Include="src\Palette.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\FOV.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
