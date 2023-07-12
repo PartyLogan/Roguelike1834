@@ -16,7 +16,6 @@ int main()
     const int tileSize = 16;
     
     InitWindow(screenWidth, screenHeight, "Roguelike");
-    //SetTargetFPS(60);
 
     // Load texture and setup renderer
     auto texture = LoadTexture("assets/monochrome-transparent_packed.png");
