@@ -115,6 +115,17 @@ bool Map::InBounds(int x, int y)
 	return false;
 }
 
+bool Map::IsBlocked(int x, int y)
+{
+	if (!InBounds(x, y)) {
+		return true;
+	}
+	if (tiles[x][y]->blocksMovement) {
+		return true;
+	}
+	return false;
+}
+
 void Map::FloorRoom(Rectangle room)
 {
 	int xMin = std::min(room.x, room.x + room.width);

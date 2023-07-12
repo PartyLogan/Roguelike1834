@@ -45,6 +45,12 @@
     <ClCompile Include="src\actions\ActionResult.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\actions\WalkAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\BumpAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\Anikki_square_16x16.png">
@@ -83,6 +89,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\actions\ActionResult.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\WalkAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\BumpAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

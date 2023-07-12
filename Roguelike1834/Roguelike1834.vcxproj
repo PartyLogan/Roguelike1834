@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\actions\BumpAction.cpp" />
     <ClCompile Include="src\actions\Action.cpp" />
     <ClCompile Include="src\actions\ActionResult.cpp" />
     <ClCompile Include="src\entities\Actor.cpp" />
@@ -138,12 +139,14 @@
     <ClCompile Include="src\game\Renderer.cpp" />
     <ClCompile Include="src\Roguelike1834.cpp" />
     <ClCompile Include="src\maps\Tile.cpp" />
+    <ClCompile Include="src\actions\WalkAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\Anikki_square_16x16.png" />
     <Image Include="assets\monochrome-transparent_packed.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\actions\BumpAction.h" />
     <ClInclude Include="src\actions\Action.h" />
     <ClInclude Include="src\actions\ActionResult.h" />
     <ClInclude Include="src\entities\Actor.h" />
@@ -154,6 +157,7 @@
     <ClInclude Include="src\game\Renderer.h" />
     <ClInclude Include="src\maps\Tile.h" />
     <ClInclude Include="src\Util.h" />
+    <ClInclude Include="src\actions\WalkAction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

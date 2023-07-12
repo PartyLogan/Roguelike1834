@@ -10,7 +10,7 @@ public:
 	std::shared_ptr<Actor> owner;
 
 	Action();
-	ActionResult Perform();
+	virtual ActionResult Perform();
 
 	void SetOwner(std::shared_ptr<Actor> owner) {
 		this->owner = owner;

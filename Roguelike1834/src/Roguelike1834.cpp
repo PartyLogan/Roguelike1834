@@ -25,12 +25,12 @@ int main()
     std::shared_ptr<GameState> gamestate = std::make_shared<GameState>(renderer, screenWidth / tileSize, screenHeight / tileSize, tileSize, texture);
 
     // Create map
-    gamestate.get()->map.get()->GenerateMap();
+    Vector2 playerStart = gamestate.get()->map.get()->GenerateMap();
 
     // Make player
-    std::shared_ptr<Actor> player = std::make_shared<Actor>(0, 0, YELLOW, ORANGE, "Player", Tile::ActorTile::Player);
-    gamestate.get()->SetPlayer(player);
+    std::shared_ptr<Actor> player = std::make_shared<Actor>(playerStart.x, playerStart.y, YELLOW, BLACK, "Player", Tile::ActorTile::Player);
 
+    gamestate.get()->SetPlayer(player);
 
     while (!WindowShouldClose())
     {
@@ -39,6 +39,7 @@ int main()
 
         gamestate.get()->Update();
         gamestate.get()->DrawMap();
+        gamestate.get()->DrawActors();
 
         DrawFPS(20, 20);
         EndDrawing();

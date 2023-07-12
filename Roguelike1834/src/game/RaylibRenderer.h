@@ -7,6 +7,7 @@ public:
     RaylibRenderer();
     void DrawTile();
     void DrawMap(int x, int y, int tileSize, Texture tileMap, std::shared_ptr<Map> map);
+    void DrawActors(int x, int y, int tileSize, Texture tileMap, std::vector<std::shared_ptr<Actor>> actors);
     void DrawEntity();
 };
 

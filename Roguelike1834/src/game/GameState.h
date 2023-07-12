@@ -22,23 +22,27 @@ public:
 	int currentActorIndex = 0;
 	// Player
 	std::shared_ptr<Actor> player;
+	Action* playerActionBuffer = nullptr;
 	// Map
 	std::shared_ptr<Map> map;
 	// Seed
 	int currentSeed = 0;
 	// Turn Management
 	int currentTurn = 0;
+	bool completedTurn = false;
 
 	GameState(std::shared_ptr<Renderer> renderer, int width, int height, int tileSize, Texture tileMap);
 	
 	void SetCurrentSeed(int seed);
 	void DrawMap();
+	void DrawActors();
 	void Update();
 	void AddActor(std::shared_ptr<Actor> actor);
 	void SetPlayer(std::shared_ptr<Actor> actor);
 private:
 	void ProcessTurn();
-	void NewTurn();
-
+	void NextActor();
+	bool GetPlayerCommand();
+	void SetPlayerActionBuffer(Action* action);
 };
 

@@ -21,6 +21,7 @@ public:
 	std::shared_ptr<Tile> GetTile(int x, int y);
 	void SetTile(int x, int y, std::shared_ptr<Tile> tile);
 	bool InBounds(int x, int y);
+	bool IsBlocked(int x, int y);
 private:
 	int playerStartX = 0;
 	int playerStartY = 0;
