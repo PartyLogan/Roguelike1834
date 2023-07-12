@@ -2,6 +2,7 @@
 #include "Tile.h"
 #include <vector>
 #include <memory>
+
 class Map
 {
 public:
@@ -13,7 +14,7 @@ public:
 	Map(int width, int height);
 
 	Vector2 GetPlayerStart() {
-		return Vector2(playerStartX, playerStartY);
+		return Vector2{ float(playerStartX), float(playerStartY) };
 	}
 
 	Vector2 GenerateMap();

@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
-#include "Map.h"
+#include "../maps/Map.h"
+
 class Renderer
 {
 public:

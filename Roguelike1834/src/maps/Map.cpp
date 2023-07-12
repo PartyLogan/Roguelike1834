@@ -1,6 +1,7 @@
 #include "Map.h"
 #include <memory>
 #include <iostream>
+#include "../Util.h"
 
 Map::Map(int width, int height)
 {
@@ -37,7 +38,7 @@ Vector2 Map::GenerateMap()
 			continue;
 		}
 
-		Rectangle newRoom = Rectangle(x, y, roomWidth, roomHeight);
+		Rectangle newRoom = Util::MakeRectangle(x, y, roomWidth, roomHeight);
 
 		bool intersects = false;
 		for (int r = 0; r < rooms.size(); r++) {
@@ -88,7 +89,7 @@ Vector2 Map::GenerateMap()
 		rooms.push_back(newRoom);
 	}
 	std::cout << "Rooms generated: " << roomCount << std::endl;
-	return Vector2(playerStartX, playerStartY);
+	return Util::MakeVector2(playerStartX, playerStartY);
 }
 
 std::shared_ptr<Tile> Map::GetTile(int x, int y)
@@ -188,5 +189,5 @@ Rectangle Map::GetGrownRoom(Rectangle room)
 	int outterY1 = room.y - 1;
 	int outterX2 = room.width + 1;
 	int outterY2 = room.height + 1;
-	return Rectangle(outterX1, outterY1, outterX2, outterY2);
+	return Util::MakeRectangle(outterX1, outterY1, outterX2, outterY2);
 }

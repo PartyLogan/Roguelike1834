@@ -2,9 +2,8 @@
 #include "raylib.h"
 #include <memory>
 #include <vector>
-#include "Actor.h"
-#include "Map.h"
 #include "Renderer.h"
+#include "../entities/Actor.h"
 
 class GameState
 {
@@ -22,15 +21,24 @@ public:
 	std::vector<std::shared_ptr<Actor>> actors;
 	int currentActorIndex = 0;
 	// Player
-	Actor player;
+	std::shared_ptr<Actor> player;
 	// Map
 	std::shared_ptr<Map> map;
 	// Seed
 	int currentSeed = 0;
+	// Turn Management
+	int currentTurn = 0;
 
 	GameState(std::shared_ptr<Renderer> renderer, int width, int height, int tileSize, Texture tileMap);
 	
 	void SetCurrentSeed(int seed);
 	void DrawMap();
+	void Update();
+	void AddActor(std::shared_ptr<Actor> actor);
+	void SetPlayer(std::shared_ptr<Actor> actor);
+private:
+	void ProcessTurn();
+	void NewTurn();
+
 };
 

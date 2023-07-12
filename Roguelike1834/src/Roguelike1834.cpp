@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include "raylib.h"
-#include "Tile.h"
-#include "GameState.h"
-#include "RaylibRenderer.h"
+#include "game/GameState.h"
+#include "game/RaylibRenderer.h"
+#include "entities/Actor.h"
+#include "maps/Tile.h"
 
 int main()
 {
@@ -26,11 +27,17 @@ int main()
     // Create map
     gamestate.get()->map.get()->GenerateMap();
 
+    // Make player
+    std::shared_ptr<Actor> player = std::make_shared<Actor>(0, 0, YELLOW, ORANGE, "Player", Tile::ActorTile::Player);
+    gamestate.get()->SetPlayer(player);
+
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(BLACK);
 
+        gamestate.get()->Update();
         gamestate.get()->DrawMap();
 
         DrawFPS(20, 20);
